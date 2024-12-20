@@ -12,13 +12,17 @@ int main (int argc, char *argv[]){
     struct addrinfo hints;
     struct addrinfo *res,*r;
 
-    memset(&hints, 0, sizeof(struct addrinfo));
+    char *filename = argv[1];
+    char *host = argv[2];
+    
+
+    memset(&hints, 0, sizeof(struct addrinfo));//tilisée pour remplir une zone de mémoire avec une valeur spécifique.
     hints.ai_family = AF_INET;    /* Allow IPv4  */
     hints.ai_socktype = SOCK_DGRAM; /* Datagram socket */
     hints.ai_flags = AI_PASSIVE;    /* For wildcard IP address */
 
 
-    int status = getaddrinfo(argv[1],NULL,&hints,&res);
+    int status = getaddrinfo(argv[2],NULL,&hints,&res);
     if (status != 0){
         fprintf(stderr,"%s\n",gai_strerror(status));//stdout sortie standart / stderr flux d'erreur restera tj afficher dans la console alors stdout peut etre ecrit dans un fichier
         exit(EXIT_FAILURE);   

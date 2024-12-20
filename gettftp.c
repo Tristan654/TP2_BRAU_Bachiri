@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define Size_message 10;
+
 
 
 int main(int argc, char* argv[]){
