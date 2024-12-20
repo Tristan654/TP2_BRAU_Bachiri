@@ -40,6 +40,7 @@ int main (int argc, char *argv[]){
         write(STDOUT_FILENO,"the socket is connected",sizeof("the socket is connected"));
     }
 
+    close(sock);
     return 0;
     }
 
